@@ -15,7 +15,7 @@ const Card = ({ details }) => {
 
 
   return (
-    <div className="flex justify-between bg-secondary-color p-4 mt-4 rounded-md">
+    <div className="flex justify-between bg-secondary-color p-4 mt-4 rounded-md sm:flex-col">
       <div className="flex gap-x-8">
         <div className="w-12">
           <img src={details.companyLogo} alt="Logo" />
@@ -31,7 +31,7 @@ const Card = ({ details }) => {
           </div>
 
           {details.appliedOn && (
-            <div className="flex gap-x-8">
+            <div className="flex gap-x-8 md:flex-col">
               <p>Applied On: {details.appliedOn}</p>
               {details.status === "accepted" && details.interviewDate && (
                 <p className="text-green">
@@ -43,7 +43,7 @@ const Card = ({ details }) => {
         </div>
       </div>
       {details.status && (
-        <div className={`flex items-center gap-x-2 ${statusColor}`}>
+        <div className={`flex items-center gap-x-2 mt-2 ${statusColor}`}>
           <IoEllipse />
           <p>{details.status}</p>
         </div>
